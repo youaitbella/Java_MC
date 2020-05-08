@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements xmlns="https://javabeginners.de/xml">
+    <e1 xmlns="" name="e1" value="Wert 1" />
+    <e2 xmlns="">
+        <name>e2</name>
+        <value>Wert 2</value>
+    </e2>
+</elements>

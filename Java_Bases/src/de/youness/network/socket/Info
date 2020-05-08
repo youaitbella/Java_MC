@@ -1,0 +1,27 @@
+Wie schreibe ich einen Server und einen Client, die über Sockets miteinander kommunizieren?
+-------------------------------------------------------------------------------------------
+Ein Socket (engl. Sockel) ist eine bidirektionale Netzwerk-Kommunikationsschnittstelle, 
+deren Verwaltung das Betriebssystem übernimmt.
+
+Die Kommunikation findet zwischen einem Server und einem Client über einen definierten Port statt.
+
+Das Beispiel demonstriert das Versenden eines Strings durch einen Client über Port 3141 
+an einen Server auf dem lokalen Rechner, das Rücksenden durch den Server und die Ausgabe wiederum durch den Client.
+
+In seiner main()-Methode nutzt der Client die Klasse java.net.Socket 
+zur Einrichtung einer Socket-Verbindung über Port 3141 zu localhost.
+
+Deren Methoden getInputStream() und getOutputStream() liefern Input-, bzw. OutputStreams, 
+aus denen gelesen, bzw. in die geschrieben werden kann.
+
+Zum Schreiben von Strings bietet sich ein PrintStream an, dessen Konstruktor 
+das InputStream-Objekt und einen boolschen Wert für das Autoflushing entgegennimmt.
+
+Seine Methode println() schreibt den gewünschten String und fügt automatisch einen Zeilenumbruch an.
+
+Das Lesen erfolgt zur Performance-Optimierung zunächst in einen BufferedReader, 
+der ein Objekt eines InputStreamReaders im Konstrukor entgegennimmt. 
+Sein Inhalt wird schließlich über eine Schleife Zeile für Zeile ausgelesen und auf die Konsole ausgegeben. 
+Die Methode available() erlaubt bei Bedarf die Abfrage der im InputStream verfügbaren Bytes.
+Probleme bei den Input-Output-Vorgängen, sowie ein falscher Host-Name können Exceptions werfen, 
+die in einem try-catch-Block abgefangen werden müssen.
