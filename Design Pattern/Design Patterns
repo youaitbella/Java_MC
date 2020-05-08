@@ -1,0 +1,21 @@
+Design Patterns:
+Adapter
+Eine Adapter-Klasse ist eine Klasse, die die Kooperation ansonsten inkompatibler Klassen und Interfaces ermöglicht. Dies geschieht in Java durch Erweiterung einer Klasse und/oder Implementieren eines Interfaces.
+
+Factory-Pattern
+Das Factory-Pattern ist ein Entwurfsmuster aus der Gruppe der Erzeugungsmuster, das Objekte mit Hilfe einer Methode statt direkt durch einen Konstruktoraufruf bildet.
+
+Kompositum
+Ein Kompositum ist ein Entwurfsmuster aus der Gruppe der Strukturmuster, das von der sog. Viererbande (Gang of Four, GoF) klassifiziert wurde. Es wird zur Darstellung von Teil-Ganzes-Hierarchien verwendet.
+
+Model-View-Controller
+Das Model-View-Controller Entwurfsmuster (MVC Design Pattern) ist eines der gebräuchlichsten Muster zur Strukturierung von Software. Es ermöglicht eine weitgehende Trennung von Daten-Modell und graphischer Repräsentation.
+
+Observer-Pattern
+Das Observer-Pattern ist ein Entwurfsmuster, das zur Weitergabe von Änderungen an abhängige Objekte dient.
+
+Singleton-Pattern
+Das Singleton-Pattern ist ein Entwurfsmuster, das verhindert, dass von einer Klasse mehr als ein Objekt gebildet werden kann.
+
+Strategy-Pattern
+Das Strategy-Pattern ist ein Entwurfsmuster, das einen Algorithmus in einer Klasse kapselt.
