@@ -1,0 +1,23 @@
+Design pattern Fabrique (Factory Method) en Java : jeu de stratégie
+
+Description du problème
+*   L'idée est de développer les bases d'un jeu de stratégie en temps réel (RTS pour les gamers). 
+    Dans ce type de jeu, la plupart des unités permettent de faire la guerre aux autres joueurs. 
+    Le vainqueur sera le dernier joueur disposant encore d'unités sur la carte. 
+    Généralement, les unités sont construites dans des bâtiments (usines, casernes...) grâce à des ressources (minerais, bois...) qu'il faut prélever sur la carte.
+
+*   Pour cela, nous allons définir une classe abstraite Unite disposant d'un nom, d'un coût de construction, d'une précision d'attaque, d'une faculté d'esquive...
+
+*   Toutes les unités de notre jeu vont hériter de cette classe comme par exemple la classe SoldatHumain et CommandantHumain en ayant chacune leurs propres spécificités 
+    (le commandant est plus coûteux que le soldat mais dispose d'une précision d'attaque supérieure).
+
+*   Une classe Usine va permettre de créer ces unités grâce à la méthode formerUnite(TypeUnite). 
+    La première idée qui vient à l'esprit pour implémenter cette méthode est de tester le type d'unité souhaité passé en paramètre (via une succession de if ou mieux un switch)
+    et de créer un objet correspondant à l'unité demandée (par exemple : new SoldatHumain()).
+
+*   Ce code va fonctionner mais on remarque qu'en utilisant l'opérateur new, on vient de déclarer des types concrets dans la classe Usine ce qui a pour conséquence de fortement coupler la classe Usine aux classes SoldatHumain et CommandantHumain. 
+    Est-ce un mal, car il faudra bien créer des objets concrets et l'opérateur new est conçu pour cela ? 
+    En effet, il n'est pas envisageable de développer un programme orienté objet en Java sans utiliser l'opérateur new et donc d'utiliser des types concrets. 
+    Cependant dans ce cas précis, on peut facilement prévoir que cette portion du code va être amené à évoluer lors de l'ajout de nouvelles unités. 
+    De plus, si plusieurs bâtiments différents permettent de créer des unités, les modifications devront être reporté dans plusieurs endroits du jeu. 
+    Cela va donc vite devenir de plus en plus fastidieux d'ajouter des unités et des bâtiments et surtout source d'erreurs en étant obligé de modifier le code existant.

@@ -1,0 +1,24 @@
+OBJECTIFS :
+Fournir une interface unique en remplacement d'un ensemble d'interfaces d'un sous-systeme.
+Definir une interface de haut niveau pour rendre le sous-systeme plus simple d'utilsation
+
+RAISONS DE L'UTILISER:
+Le systeme comporte un sous-systeme complexe avec plusieurs interfaces.
+Certaines de ces interfaces presentent des operations qui ne sont pas utiles au reste du systeme.
+
+Cela peut être le cas d'un sous-systeme communiquant avec des outils de mesure ou d'un sous-system d' acces à la base de données.
+
+Il serait plus judicieux de passer par une seule interface presentant seulement les operations utiles.
+Une classe unique, la facade, presente ces operations reellement necessaires.
+Remarque: la facade peut egalement implementer le Design Pattern Singleton
+
+RESULTAT :
+isoler les fonctionalites d un sous-systeme utile a la partie cliente
+
+RESPONSABILITES :
+ClasseA et ClasseB: implementent diverses fonctionalites.
+Facade: presente certaines fonctionalités. 
+        cette classe utilise les implementations des objects ClasseA et ClasseB.
+        Elle expose une version simplifiee du sous-systeme ClasseA-ClasseB
+La partie cliente fait appel aux methodes presentees par l'object Facade.
+Il n'y a donc pas de dependances entre la partie cliente et le sous-system ClasseA-ClasseB.

@@ -1,0 +1,5 @@
+Objectif du pattern:
+	Fournir un intermediaire entre la partie cliente et un objet pour controler les acces a ce dernier 
+
+Resultat:
+	Le Design Pattern permet d'isoler le comportement lors de l'acces à un objet

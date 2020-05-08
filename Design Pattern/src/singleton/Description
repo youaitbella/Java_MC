@@ -1,0 +1,33 @@
+Pattern Singleton
+-----------------
+    Le pattern Singleton permet de garantir la création d’une instance unique d’une classe durant toute la durée d’exécution d’une application
+
+    Le pattern Singleton fait partie des patterns Fabrique.
+
+    Il très exploité dans les application qui s’exécutent dans un environnement multithread.
+
+Catégorie : Création
+OBJECTIFS :
+    Restreindre le nombre d' instances d'une classe à une et une seule.
+    Fournir une méthode pour accéder à cette instance unique.
+
+RAISONS DE L'UTILISER :
+    La classe ne doit avoir qu'une seule instance.
+    Cela peut être le cas d'une ressource système par exemple.
+    La classe empêche d'autres classes de l'instancier. Elle possède la seule instance d'elle-même et fournit la seule méthode permettant d'accéder à cette instance.
+
+RESULTAT :
+    Le Design Pattern permet d'isoler l'unicité d'une instance.
+
+RESPONSABILITES :
+    Singleton doit restreindre le nombre de ses propres instances à une et une seule. 
+    Son constructeur est privé : cela empêche les autres classes de l'instancier.
+    La classe fournit la méthode statique getInstance() qui permet d'obtenir l'instance unique.
+
+
+Application multi threads et le singleton
+-----------------------------------------
+    Dans une application multi thread, le fait que plusieurs threads utilisent un singleton, peut engendrer des problèmes de synchronisation.
+    Pour éviter le problème, les méthodes du singleton peuvent être déclarée synchronized.
+    Ceci entraine la création d’une file d’attente au niveau de l’accès à ces méthodes.
+    Ce qui handicape les performances de l’application.

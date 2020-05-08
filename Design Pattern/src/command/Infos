@@ -1,0 +1,24 @@
+Objectifs:
+----------
+Encapsuler une requete sous la forme d object
+Parametrer facilement des requetes diverses
+Permettre des operations reversibles
+
+Raison d utilisation:
+---------------------
+
+
+Resultat:
+--------
+isoler une requete
+
+Responsabilites:
+----------------
+Commande:  definit l'interface d une commande
+ConcreteCommandeA et ConcreteCommandeB: implementent une commande. Chaque classe
+                                        implemente la methode executer(), en appelant 
+                                        des methodes de l object Recepteur
+Invoqueur: declenche la commande. il appelle la methode executer() d un object Commande
+Recepteur: recoit la commande et realise les operations associees. 
+           Chaque object Commande concret possede un lien avec un object Recepteur
+La partie cliente configure le lien entre les objects Commande et le Recepteur

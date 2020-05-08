@@ -1,0 +1,16 @@
+Fabrique abstraite (Abstract Fabrique abstraite (Abstract Factory Factory )
+Catégorie : Création
+OBJECTIFS :
+    Fournir une interface pour créer des objets d'une même famille sans préciser leurs classes concrètes.
+RESULTAT
+    Le Design Pattern permet d'isoler l'appartenance à une famille de classes.
+--------------------------------------------------------------------------------
+
+RESPONSABILITES :
+    AbstractFactory : définit l'interface des méthodes de création.
+
+    FactoryImplA et FactoryImplB : implémentent l'interface et instancient la classe concrète appropriée.
+
+    AbstractPlugin : définit l'interface d'un type d'objet instancié.
+    PluginA PluginA et PluginB PluginB : sont des sous sont des sous-classes classes concrètes. concrètes. Elles sont instanciées respectivement par par les FactoryImplA et FactoryImplB
+    La partie cliente fait appel à une Fabrique pour obtenir une nouvelle instance d'AbstractPlugin. L'instanciation est transparente pour la partie cliente. Elle manipule une AbstractPlugin.

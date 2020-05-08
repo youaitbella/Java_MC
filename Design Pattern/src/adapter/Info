@@ -1,0 +1,6 @@
+Objectif du pattern:
+	Convertir l'interface d'une classe dans une autre interface comprise par la partie cliente.
+	Permettre à des classe de fonctionner ensemble, ce qui n'aurait pas été possible à cause de leurs interfaces incompatibles.
+
+Resultat:
+	Le Design Pattern permet d'isoler l'adaptation d'un sous-système.

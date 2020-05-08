@@ -1,0 +1,25 @@
+OBJECTIFS:
+Definir une famille d'algorithmes intercheangeables
+Permetter de les changer independemment de la partie cliente
+
+RAISONS DE L'UTILISER :
+un object doit pouvoir faire varier une partie de son algorithme.
+
+cela peut etre une liste triée.
+A chaque insertion, la liste place le nouvel element à l'emplacement correspendant au tri.
+Le tri peut etre alphabetique, inverse, les majescule avent les miniscule, etc...
+
+La partie de l'algorihme qui varie (le tri) est la strategie.
+Toutes les strategies presentent la meme interface.
+la classe utilisant la strategie(la liste) delegue la partie de traitment concernée à la strategie.
+
+RESULTAT :
+isoler les algorithmes appatenant à une meme famille d'algorithmes.
+
+Responsabilités:
+Strategie: definit l'interface commune des algorithmes.
+ConcreteStrategieA et ConcreteStrategieB: implementent les methodes d'algorithme.
+ClasseUtilisantStrategie: utilise un object Strategie.
+La partie cliente configure un object ClassUtilisantStrategie avec un object Strategie
+et appelle la methode de ClassUtilisantStrategie qui utilise la strategie.
+Dans l'exemple, la configuration s'effectue par le constructeur, mais la configuration peut egalement s'effectuer par une methode "setter".

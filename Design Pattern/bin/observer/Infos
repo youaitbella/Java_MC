@@ -1,0 +1,28 @@
+OBJECTIFS :
+Prevenir des objets observateurs, enregistrés auprès d'un objet, d'un événement.
+
+RAISONS DE L'UTILISER :
+Un objet doit connaitre les changements d'état d'un autre objet.
+L'objet doit etre informé immediatement.
+
+Cela peut être le cas d'un tableau affichant des statistiques.
+Si une nouvelle donnée est entrée, les statsitiques sont recalculées.
+Le tableau doit être informé du changement, afin qu'il soit rafraîchi.
+L'objet devat connaître le changement (le tableau) est un observateur.
+Il s'enregistre en tant que tel auprès de l'objet dont l'état change (Les statistiques) est un "observe".
+Il informe ses observateurs en cas d'évenement.
+
+RESULTAT :
+isoler un algorithme traitant un événement
+
+RESPONSABILITES :
+Observe: est l´interface de l'objet à observer.
+         Il possède une liste d'objets Observateurs à la liste.
+         Il fournit également une méthode pour avertir les objet Observatuers.
+ConcreteObserve: l'implementation de l'objet à observer.
+                 Lorsqu'une valeur est modifiée, la méthode notifier() de la classe Observe est appelée.
+Observatueur: définit l'interface de l'observateur.
+              Il déclare le/les methode(s) que l'objet Observe appelle en cas d'événements.
+ConcreteObservateurA et ConcreteObservateurB: sont des sous-classes concrètes de Observateur.
+                                              Ils implémentent des comportements de mise à jour an cas d'événements.
+La partie cliente indique à l'objet Observe les objets Observateur qu'il avertira.

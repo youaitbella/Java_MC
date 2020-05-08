@@ -1,0 +1,27 @@
+OBJECTIFS :
+Fournir une interface pour créer des objets d'une même famille sans préciser leurs classes concrètes.
+
+RAISONS DE L'UTILISER :
+Le système utilise des objets qui sont regroupés en famille. 
+Selon certains critères, le système utilise les objets d'une famille ou d'une autre.
+Le système doit utiliser ensemble les objets d'une famille.
+
+Cela peut être le cas des éléments graphiques d'un look and feel : pour un look and feel donné, tous les graphiques créés doivent être de la même famille.
+
+La partie cliente manipulera les interfaces des objets; ainsi il y aura une indépendance par rapport aux classe concrètes.
+Chaque fabrique concrète permet d'instancier une famille d'objets(éléments graphiques du même look and feel);
+ainsi la notion de famille est renforcée.
+
+RESULTAT :
+isoler l'appartenance à une famille de classes.
+
+RESPONSABILITES :
+AbstractFabrique: définit l'interface des méthodes de création.
+                  Dans le diagramme, il n'y a qu'une méthode de création pour un objet d'une classe.
+                  Mais, le diagramme sous-entend un nombre indéfini de méthodes pour un nombre indéfini de classes.
+ConcreteFabriqueA et ConcreteFabriqueB :  implèmentent l'interface et instancient la classe concrète appropriée
+AbstractClasse:  définit l'interface d'un type d'objet instancié.
+ClasseA et ClasseB: sont des sous-classes concrètes d'AbstractClasse.
+                    Elles sont instanciées par lesConcreteFabrique
+La partie cliente fait appel à une Fabrique pour obtenir une nouvelle instance d'AbstractClasse.
+L'instanciation est transparente pour la partie cliente. Elle manipule une AbstractClasse.
